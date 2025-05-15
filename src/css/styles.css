@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+*:focus {
+    outline: none;
+}
+.text-color {
+    color: #b2ff59;
+}
+#title {
+    user-select: none;
+    color: #b2ff59;
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+.main-color {
+    color: #bebcbc;
+}
+html,
+body {
+    background-image: url(/assets/images/m1.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    user-select: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+#cities-select {
+    transform: translate(50px, 0);
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px 30px 50px;
+    text-align: center;
+}
+
+.select {
+    background-color: rgba(150, 146, 143, 0.87);
+    transition: 0.5s;
+    opacity: 0;
+    display: none;
+
+}
+
+.select.show {
+    opacity: 1;
+    display: block;
+}
+
+.select::before {
+    content: "";
+    position: absolute;
+    transition: 0.5s;
+    left: 0;
+    bottom: -17px;
+    width: 0;
+    height: 0;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-top: 17px solid white;
+}
+
+.settings {
+    transition: 0.5s;
+}
+
+.settings.rotate {
+    transform: rotate(90deg);
+}
+
+#prayer-times {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .6);
+}
+
+
+@media (max-width: 768px) {
+  /* HEADER */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  header h1 {
+    flex: 1 1 30%;
+    font-size: 14px;
+  }
+
+  /* PRAYER TIMES GRID */
+  .prayer-times {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* خليهم صفين بكل صف فيه عنصرين */
+    gap: 0px;
+    width: 100%;
+    padding: 20px;
+  }
+  #hijri-date{
+    display: none;
+  }
+  .prayer-times > div {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .prayer-times h3 {
+    font-size: 16px;
+  }
+
+  .prayer-times p {
+    font-size: 16px;
+  }
+
+  /* CITY SELECT */
+  #cities-select {
+    position: relative;
+    transform: translate(0);
+    width: 50%;
+    margin: 7px;
+    font-size: 14px;
+  }
+
+  #custom-city li {
+    padding: 10px;
+    font-size: 14px;
+  }
+.select::before {
+    content: "";
+    position: absolute;
+    transition: 0.5s;
+    left: 0;
+    bottom: -12px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
+  .label {
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  .footer {
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  footer h4 {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+#title{
+    font-size: 20px;
+    padding-bottom: 5;
+    margin: 0;
+}
+  .settings i {
+    font-size: 15px;
+  }
+}
+
